@@ -24,6 +24,9 @@ while getopts "do:n" o; do
     d)
       debug=1
       ;;
+    *) 
+      echo "usage: $0 " >&2
+      exit 1 ;;
   esac
 done
 
