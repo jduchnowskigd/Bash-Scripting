@@ -8,6 +8,6 @@ for i in {1..100}; do
   elif (( i % 5 == 0 )); then
     echo "Buzz"
   else
-    echo $i
+    echo "$i"
   fi
 done
