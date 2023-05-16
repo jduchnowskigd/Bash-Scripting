@@ -6,19 +6,21 @@ output_file=""
 while getopts "s:i:o:" o; do
   case "${o}" in
     s)
-      shift_value=$OPTARG
-      ;;
+        shift_value=$OPTARG
+        ;;
     i)
-     readonly input_file=$OPTARG
-      ;;
+        readonly input_file=$OPTARG
+        ;;
     o)
-     readonly output_file=$OPTARG
-      ;;
+        readonly output_file=$OPTARG
+        ;;
+    *) 
+        echo "usage: $0 " >&2
+        exit 1 ;;
   esac
 done
 
-readonly INPUT_STRING=$(cat "$input_file")
-
+INPUT_STRING=$(cat "$input_file")
 output_string=""
 for (( i=0; i<${#INPUT_STRING}; i++ )); do
     CHAR=${INPUT_STRING:i:1}
